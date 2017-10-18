@@ -10,6 +10,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :token
       t.string :secret
 
+      t.string :email
+      t.string :password_digest
+
       t.timestamps
     end
   end

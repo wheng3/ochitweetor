@@ -13,8 +13,16 @@
           <li class="nav-item">
             <%= link_to image_tag('sign_in_with_twitter.png'), login_with_twitter_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Login with email", new_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Signup", new_user_path, class: "nav-link" %>
+          </li>
         <% else %>
+          <li class="nav-item">
             <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+          </li>
         <% end %>
         <li class="nav-item">
           <a class="nav-link" href="#">Services</a>

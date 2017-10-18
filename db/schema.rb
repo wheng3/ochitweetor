@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20171018052452) do
     t.string "twitter"
     t.string "token"
     t.string "secret"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
