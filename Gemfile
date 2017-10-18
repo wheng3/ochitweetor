@@ -37,6 +37,8 @@ gem 'omniauth-twitter'
 gem 'bootstrap', '~> 4.0.0.beta'
 # Use jquery rails for bootstrap
 gem 'jquery-rails'
+# A Ruby interface to the Twitter API
+gem 'twitter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
