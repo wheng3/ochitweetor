@@ -4,10 +4,20 @@ class SessionsController < ApplicationController
 			# current_user.update_token
 		else
 			auth = request.env["omniauth.auth"]
-			user = User.from_omniauth(auth)
-			session[:user_id] = user.id
+			if auth
+				user = User.from_omniauth(auth)
+				session[:user_id] = user.id
+				flash[:success] = "Welcome, #{user.name}"
+			else
+				user =  User.find_by(email: params[:session][:email]).try(:authenticate, params[:session][:password])
+				if user
+					session[:user_id] = user.id
+					flash[:success] = "Welcome, #{user.name}"
+				else
+					flash[:error] = "Failed to login"
+				end
+			end
 		end
-		flash[:success] = "Welcome, #{user.name}"
 		redirect_to root_path
 	end
 
