@@ -31,8 +31,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use figaro to store sensitive data
 gem "figaro"
-# User twitter omniauth to allow users to login with their twitter accounts
+# Use twitter omniauth to allow users to login with their twitter accounts
 gem 'omniauth-twitter'
+# Use bootstrap
+gem 'bootstrap', '~> 4.0.0.beta'
+# Use jquery rails for bootstrap
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
