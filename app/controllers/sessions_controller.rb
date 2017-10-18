@@ -3,16 +3,17 @@ class SessionsController < ApplicationController
 		if current_user
 			# current_user.update_token
 		else
-			auth_hash = request.env["omniauth.auth"]
-			user = User.from_omniauth(auth_hash)
+			auth = request.env["omniauth.auth"]
+			user = User.from_omniauth(auth)
 			session[:user_id] = user.id
 		end
 		flash[:success] = "Welcome, #{user.name}"
+		redirect_to root_path
 	end
 
 	def destroy
 		session.clear
-		flash[:success] = "Goodbye!"
+		flash[:success] = "See you again!"
 		redirect_to root_path
 	end
 end
