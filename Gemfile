@@ -39,6 +39,8 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 # A Ruby interface to the Twitter API
 gem 'twitter'
+# Use Twilio to send and receive SMS regarding tweets, replies, mentions
+gem 'twilio-ruby', '~> 5.4.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
