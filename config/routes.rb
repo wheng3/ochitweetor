@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   root "pages#home"
   get '/login_with_twitter', to: redirect('/auth/twitter')
   get '/auth/twitter/callback', to: "sessions#create"
-  get '/logout', to: "sessions#destroy"
-  resource :session, only: [:create, :destroy]
+  delete '/logout', to: "sessions#destroy"
 end
