@@ -14,6 +14,8 @@
 @import "bootstrap";
 body {
   padding-top: 60px;
+  background: url(white_cloud.jpg) no-repeat center fixed;
+  background-size: cover;
 }
 @media (max-width: 979px) {
   body {

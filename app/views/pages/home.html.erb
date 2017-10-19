@@ -2,3 +2,15 @@
   <%= content_tag :div, value, class: "flash_#{key} #{flash_class(key)}" %>
   <%= javascript_tag "$('.flash_#{key}').fadeOut(5000);" %>
 <% end %>
+<% if current_user %>
+	<% if !current_user.provider.nil? %>
+		<%= link_to "Follow back all your followers!", twitter_follow_back_path, method: :post %>
+	<% else %>
+		<p>Looks like you decided to sign in with email, so no twitter functions for you</p>
+	<% end %>
+<% else %>
+	<p>Sign in with twitter to autofollow all your followers</p>
+<% end %>
+
+<h1>Most popular tweets today</h1>
+<a class="twitter-timeline" href="https://twitter.com/hashtag/lolesports" data-widget-id="920974127099297792">#lolesports Tweets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
