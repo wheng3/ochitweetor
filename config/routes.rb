@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   #Twilio
   post 'twilio/sms' => 'twilio#sms'
 
+  #Twitter
+  post 'twitter/follow_back' => 'twitter#follow_back'
+  post "twitter/search" => 'twitter#search'
+
 end

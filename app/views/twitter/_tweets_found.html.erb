@@ -1,0 +1,6 @@
+<% if @tweets_oembeds %>
+	<h1>10 Most Popular Search Results Found</h1>
+	<% @tweets_oembeds.each do |oembed| %>
+		<%= raw(oembed.html) %>
+	<% end %>
+<% end %>

@@ -41,6 +41,8 @@ gem 'jquery-rails'
 gem 'twitter'
 # Use Twilio to send and receive SMS regarding tweets, replies, mentions
 gem 'twilio-ruby', '~> 5.4.0'
+# Use ransack to create search form
+gem 'ransack'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
