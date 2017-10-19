@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update]
   resources :sessions, only: [:create, :new]
 
+  #Twilio
+  post 'twilio/sms' => 'twilio#sms'
+
 end
