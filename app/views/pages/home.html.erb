@@ -5,12 +5,25 @@
 <% if current_user %>
 	<% if !current_user.provider.nil? %>
 		<%= link_to "Follow back all your followers!", twitter_follow_back_path, method: :post %>
+		<div class='content'>
+		  <div id="search-box">
+		    <%= form_tag 'twitter/search', method: :post, remote: true do %>
+		      <%= text_field_tag 'search', nil, placeholder: "Type in any keyword to search on Twitter", style: "width: 500px;"%>
+		      <button type="submit">Search</button>
+		    <% end %>
+		  </div>
+		</div>
 	<% else %>
 		<p>Looks like you decided to sign in with email, so no twitter functions for you</p>
 	<% end %>
 <% else %>
-	<p>Sign in with twitter to autofollow all your followers</p>
+	<p>Sign in with twitter to use the twitter functions</p>
 <% end %>
 
-<h1>Most popular tweets today</h1>
-<a class="twitter-timeline" href="https://twitter.com/hashtag/lolesports" data-widget-id="920974127099297792">#lolesports Tweets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="tweets-found">
+</div>
+
+<div class="twitter-embed">
+	<h1>Live tweets about 2017 LOL World Championship </h1>
+	<a class="twitter-timeline" href="https://twitter.com/hashtag/Worlds2017" data-widget-id="920989036558168066">#Worlds2017 Tweets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>

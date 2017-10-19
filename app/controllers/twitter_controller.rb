@@ -26,6 +26,23 @@ class TwitterController < ApplicationController
 		redirect_to root_path
 	end
 
+	def search
+		if params[:search]
+			@twitter_client = twitter_client
+			@tweets = @twitter_client.search(params[:search], result_type: "popular").take(10)
+			@tweets_oembeds = @twitter_client.oembeds(@tweets)
+			respond_to do |format|
+				format.html { redirect_to root_path,  flash: {success: "Successfully found 10 of the most popular tweets about #{params[:search]}"} }
+				format.js
+			end
+		else
+			respond_to do |format|
+				format.html { redirect_to root_path,  flash: {error: "Failed to search, please try again by putting keyword"} }
+				format.js
+			end
+		end
+	end
+
 	private
 
 		def twitter_client
