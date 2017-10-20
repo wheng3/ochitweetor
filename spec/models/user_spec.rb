@@ -9,10 +9,7 @@ RSpec.describe User, type: :model do
 
 	context "validation: " do
 		it { is_expected.to validate_presence_of(:name) }
-		it { is_expected.to allow_value(:proper_email).for(:email) }
 		it { is_expected.not_to allow_value(:improper_email).for(:email)  }
-		it { is_expected.to validate_uniqueness_of(:email) }
-		it { is_expected.to validate_presence_of(:password) }
 	end
 
 	context "creates: " do
